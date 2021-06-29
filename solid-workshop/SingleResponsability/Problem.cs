@@ -17,7 +17,7 @@ public class Carne
         {
             return new CarneCozida();
         } 
-        else if (tipoPreparo == "Braza")
+        else if (tipoPreparo == "NaBraza")
         {
             return new Churrasco();
         } 
