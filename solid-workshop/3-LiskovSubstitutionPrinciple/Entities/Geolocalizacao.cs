@@ -1,6 +1,8 @@
 
 
-public class Geolocalizacao {}
+public class Geolocalizacao {
+    
+}
 
 public enum EnumPriorisarTipoEstrada 
 {

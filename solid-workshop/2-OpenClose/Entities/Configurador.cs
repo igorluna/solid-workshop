@@ -1,4 +1,3 @@
-
 using System;
 
 public class Configurador
@@ -12,10 +11,12 @@ public class Configurador
     {
         throw new NotImplementedException();
     }
-
- 
 }
-public class ConfigSMTP{}
+
+public class ConfigSMTP
+{
+}
+
 public class Repositorio
 {
     internal string ObtemUltimaIntegracao()

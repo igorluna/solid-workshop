@@ -1,10 +1,14 @@
-public class Sistema
+// Software entities (e.g. classes, modules, functions) should be open for extension but closed for modification.
+
+public class SistemaNovo
 {
-    private IntegradorEmail _integrador = new IntegradorEmail(
+    private IIntegrador _integrador = new IntegradorEmailNovo(
         new Configurador(),
         new Repositorio());
 
-    public Sistema(IntegradorEmail integrador)
+    // private IIntegrador _integrador = new IntegradorApi();
+
+    public SistemaNovo(IIntegrador integrador)
     {
         _integrador = integrador;
     }
@@ -14,12 +18,12 @@ public class Sistema
     }
 }
 
-public class IntegradorEmail
+public class IntegradorEmailNovo : IIntegrador
 {
     private Configurador _configurador;
     private Repositorio _repositorio;
 
-    public IntegradorEmail(
+    public IntegradorEmailNovo(
         Configurador configurador,
         Repositorio repositorio)
     {
@@ -48,3 +52,16 @@ public class IntegradorEmail
         return true;
     }
 }
+
+public class IntegradorApi : IIntegrador
+{
+    public bool Integrar()
+    {
+        throw new System.NotImplementedException();
+    }
+}
+public interface IIntegrador { 
+    bool Integrar();
+}
+
+
