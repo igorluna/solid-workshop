@@ -24,11 +24,3 @@ public class CalculadorDistancia
         return 0;
     }
 }
-
-public class Geolocalizacao {}
-
-public enum EnumPriorisarTipoEstrada 
-{
-    ApenasBR,
-    PodeUsar
-}
