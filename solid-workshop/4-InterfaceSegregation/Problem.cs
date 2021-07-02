@@ -1,53 +1,31 @@
 // “Clients should not be forced to depend upon interfaces that they do not use.”
-using System.Collections.Generic;
 
 public interface ICarrinhoDeCompra
 {
     void Esvazia();
 
-    void AdicionaItemLeve(Item item);
+    void AdicionaItem(string item);
 
-    void AcomodarCrianca(Crianca crianca);
+    void AcomodarCrianca(string crianca);
 }
 
 public class Carrinho : ICarrinhoDeCompra
 {
-    private Crianca _crianca;
+    public void AcomodarCrianca(string crianca) { }
 
-    private List<Item> _feira;
+    public void AdicionaItem(string item) { }
 
-    public void AcomodarCrianca(Crianca crianca)
-    {
-        _crianca = crianca;
-    }
-
-    public void AdicionaItemLeve(Item item)
-    {
-        _feira.Add(item);
-    }
-
-    public void Esvazia()
-    {
-       _feira.Clear();
-    }
+    public void Esvazia() { }
 }
 
 public class Cesta : ICarrinhoDeCompra
 {
-    private List<Item> _feira;
-
-    public void AcomodarCrianca(Crianca crianca)
+    public void AcomodarCrianca(string crianca)
     {
-        throw new GuriNaoCabeAquiException();
+        throw new System.Exception("Não cabe um guri aqui!");
     }
 
-    public void AdicionaItemLeve(Item item)
-    {
-        _feira.Add(item);
-    }
+    public void AdicionaItem(string item) { }
 
-    public void Esvazia()
-    {
-       _feira.Clear();
-    }
+    public void Esvazia() { }
 }

@@ -7,7 +7,7 @@ public class Biblioteca
 {
     public List<Livro> ObterLivros()
     {
-        // new é um code smell
+        // New é um code smell
         LivrosDataBase database = new LivrosDataBase();
         return database.ObtemLivros();
     }
@@ -15,7 +15,8 @@ public class Biblioteca
     public void AdicionarLivro(Livro novoLivro)
     {
         LivrosDataBase database = new LivrosDataBase();
-        // uso de classes estáticas é code smell
+        
+        // Uso de classes estáticas é code smell
         novoLivro.DataCadastro = DateTime.Now;
         database.Salvar(novoLivro);
     }
