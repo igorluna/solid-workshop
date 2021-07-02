@@ -1,18 +1,16 @@
 // Software entities (e.g. classes, modules, functions) should be open for extension but closed for modification.
 
-public class SistemaNovo
+public class AplicacaoServiceNew
 {
-    private IIntegrador _integrador = new IntegradorEmailNovo(
-        new Configurador(),
-        new Repositorio());
+    private IIntegrador _integrador;
 
-    // private IIntegrador _integrador = new IntegradorApi();
-
-    public SistemaNovo(IIntegrador integrador)
+    // Agora posso repassar uma instancia do tipo de integrador que quero que ele faça(Api, Email, ou qualquer outro que possa aparecer)
+    public AplicacaoServiceNew(IIntegrador integrador)
     {
         _integrador = integrador;
     }
-    public void Principal()
+
+    public void Integra()
     {
         _integrador.Integrar();
     }
@@ -20,35 +18,15 @@ public class SistemaNovo
 
 public class IntegradorEmailNovo : IIntegrador
 {
-    private Configurador _configurador;
-    private Repositorio _repositorio;
-
-    public IntegradorEmailNovo(
-        Configurador configurador,
-        Repositorio repositorio)
-    {
-        _configurador = configurador;
-        _repositorio = repositorio;
-    }
-    
     public bool Integrar()
     {
         // Obtem email destino
-        string emailDestino = _configurador.ObtemEmailCliente();
 
         // Obtem configuracao SMTP
-        ConfigSMTP configSmtp = _configurador.ObtemConfigSMTP();
 
         // Obtem a utlima mensagem 
-        string mensagem = _repositorio.ObtemUltimaIntegracao();
 
         // Envia o email
-        return EnviarEmail(configSmtp, emailDestino, mensagem);
-    }
-
-    private bool EnviarEmail(ConfigSMTP configSmtp, string emailDestino, string mensagem)
-    {
-        // Enviou o email
         return true;
     }
 }
@@ -57,7 +35,12 @@ public class IntegradorApi : IIntegrador
 {
     public bool Integrar()
     {
-        throw new System.NotImplementedException();
+        // Obtem configuração da API
+
+        // Obtem dados para enviar para a API
+
+        //Envia para API
+        return true;
     }
 }
 public interface IIntegrador { 

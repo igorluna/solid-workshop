@@ -1,27 +1,30 @@
 
 // "There should never be more than one reason for a class to change." In other words, every class should have only one responsibility.
 
-public class Carne
+public class Mensagem
 {
     public int Id { get; set; }
     public string Tipo { get; set; }
-    public int Peso { get; set; } 
+    public int Remetente { get; set; } 
 
-    public ICarnePreparada Preparar(string tipoPreparo)
+    public string Converte(string formato)
     {
-        if(tipoPreparo == "Frita")
+        if(formato == "json")
         {
-            return new CarneAssada();
+            // Lógica que monta o json
+            return @"{'json':'json'}";
         } 
-        else if (tipoPreparo == "NaPressao")
+        else if (formato == "xml")
         {
-            return new CarneCozida();
+            // Lógica que monta o XML
+            return "<xml> </xml>";
         } 
-        else if (tipoPreparo == "NaBraza")
+        else if (formato == "base64")
         {
-            return new Churrasco();
+            // Lógica que monta base64
+            return "31923891283912839";
         } 
 
-        throw new System.Exception("Forma de preparo não cadastrada.");
+        throw new System.Exception("Esse formato não existe.");
     }
 }
