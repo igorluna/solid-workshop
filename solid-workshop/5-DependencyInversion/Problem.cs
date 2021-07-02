@@ -1,4 +1,6 @@
-// "High-level modules should not depend on low-level modules, both should depend on abstractions. Abstractions should not depend on details, details should depend on abstractions."
+// "Modulos de alto nivel não devem depender de modulos de baixo nivel. Ambos devem depender de abstrações."
+// "Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações."
+
 
 using System;
 using System.Collections.Generic;

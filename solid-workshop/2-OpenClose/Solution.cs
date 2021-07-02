@@ -1,4 +1,7 @@
-// Software entities (e.g. classes, modules, functions) should be open for extension but closed for modification.
+// "Entidades (classes, modulos, funcoes) devem ser abertas para extensão e fechadas para modificações"
+// "Uma classe está fechada, quando ela está compilada, armasenada em uma biblioteca e usada por classes clientes"
+// "A classe está aberta, quando outras classes podem usa-la por heranca, adicionando novas funcionalidades."
+
 
 public class AplicacaoServiceNew
 {

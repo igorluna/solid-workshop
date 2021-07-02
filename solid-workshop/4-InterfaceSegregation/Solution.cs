@@ -1,4 +1,4 @@
-// “Clients should not be forced to depend upon interfaces that they do not use.”
+// “Clientes não devem depender de interfaces que não usam.”
 
 public interface IAcomodadorDeCompras
 {

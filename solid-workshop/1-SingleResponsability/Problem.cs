@@ -1,5 +1,8 @@
 
-// "There should never be more than one reason for a class to change." In other words, every class should have only one responsibility.
+// "Não deve haver mais de um motivo para a classe mudar."
+// Em outras palavras, cada classe deve ter apenas uma responsabilidade.
+
+
 
 public class Mensagem
 {
