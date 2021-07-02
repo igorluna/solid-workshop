@@ -3,29 +3,29 @@ In a computer program, if type B is a subtype of type A then objects of type A m
 with objects of type B without altering any of the desirable properties of type A.
 In essence it means that every subclass should be substitutable for their base class.
 */
-// Calcula distancia considerando ruas/estradas
-public class CalculadorViajem
+public class Principal
 {
-    public double ObtemDistancia(Geolocalizacao origem, Geolocalizacao destino, EnumPriorisarTipoEstrada estrada)
+    public void Teste(Pato pato)  
     {
-        if(estrada == EnumPriorisarTipoEstrada.ApenasBR)
-        {          
-          // faz algo
-        }
-        else
-        { 
-          // faz outra coisa
-        }
-
-        return 0;
+      pato.Nadar();
     }
 }
 
-// Calcula distancia apenas considerando os pontos de origem e destino
-public class CalculadorDistancia
+
+public class Pato
 {
-    public double ObtemDistancia(Geolocalizacao origem, Geolocalizacao destino)
+    public virtual void Nadar()
     {
-        return 0;
+      // Nadou!
+    }
+}
+
+public class PatoDeBrinquedo : Pato
+{
+    private bool temBateria;
+    public override void Nadar()
+    {
+      //if (temBateria)
+      //      Nadou!
     }
 }
